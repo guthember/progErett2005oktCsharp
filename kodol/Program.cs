@@ -6,6 +6,7 @@ namespace kodol
     class Program
     {
         static string nyiltSzoveg;
+        static string alakitottSzoveg;
 
         static void Elso()
         {
@@ -59,18 +60,22 @@ namespace kodol
         {
             Console.WriteLine("\n2. feladat");
             Console.WriteLine("Átalakítás...");
-            nyiltSzoveg = nyiltSzoveg.ToUpper();
-            nyiltSzoveg = EkezetCsere(nyiltSzoveg);
-            nyiltSzoveg = EgyebKarakter(nyiltSzoveg);
+            alakitottSzoveg = nyiltSzoveg.ToUpper();
+            alakitottSzoveg = EkezetCsere(alakitottSzoveg);
+            alakitottSzoveg = EgyebKarakter(alakitottSzoveg);
+        }
 
-            Console.WriteLine(nyiltSzoveg);
-
+        static void Harmadik()
+        {
+            Console.WriteLine("\n3. feladat");
+            Console.WriteLine("Átalakított szöveg: {0}", alakitottSzoveg);
         }
 
         static void Main(string[] args)
         {
             Elso();
             Masodik();
+            Harmadik();
 
             Console.ReadKey();
         }
