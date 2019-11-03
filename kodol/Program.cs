@@ -7,6 +7,7 @@ namespace kodol
     {
         static string nyiltSzoveg;
         static string alakitottSzoveg;
+        static string kulcsSzo;
 
         static void Elso()
         {
@@ -71,11 +72,19 @@ namespace kodol
             Console.WriteLine("Átalakított szöveg: {0}", alakitottSzoveg);
         }
 
+        static void Negyedik()
+        {
+            Console.WriteLine("\n4. feladat");
+            Console.Write("Kérek egy max 5 karakteres kulcsszót (ékezet nélkül, egyéb karakterek): ");
+            kulcsSzo = Console.ReadLine().ToUpper();
+        }
+
         static void Main(string[] args)
         {
             Elso();
             Masodik();
             Harmadik();
+            Negyedik();
 
             Console.ReadKey();
         }
