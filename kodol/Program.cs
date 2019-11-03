@@ -8,6 +8,7 @@ namespace kodol
         static string nyiltSzoveg;
         static string alakitottSzoveg;
         static string kulcsSzo;
+        static string kulcsSzoveg = "";
 
         static void Elso()
         {
@@ -79,13 +80,30 @@ namespace kodol
             kulcsSzo = Console.ReadLine().ToUpper();
         }
 
+        static void Otodik()
+        {
+            Console.WriteLine("\n5. feladat");
+            Console.WriteLine("Kulcsszöveg összállítása...");
+            int mennyi = (alakitottSzoveg.Length / kulcsSzo.Length);
+            int maradek = alakitottSzoveg.Length - (kulcsSzo.Length * mennyi);
+ 
+            for (int i = 0; i < mennyi; i++)
+            {
+                kulcsSzoveg += kulcsSzo;
+            }
+
+            kulcsSzoveg += kulcsSzo.Substring(0, maradek);
+        }
+
         static void Main(string[] args)
         {
             Elso();
             Masodik();
             Harmadik();
             Negyedik();
+            Otodik();
 
+ 
             Console.ReadKey();
         }
     }
